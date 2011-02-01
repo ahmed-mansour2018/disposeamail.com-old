@@ -23,8 +23,8 @@ class Controller extends Alloy\Module\ControllerAbstract
      */
     public function inboxAction(Alloy\Request $request)
     {
-    	$user = $request->user;
+    	$username = $request->username;
 
-        return "INBOX for " . $user;
+        return "INBOX for " . $username;
     }
 }

@@ -8,7 +8,7 @@ $router->route('page_faq', '/faq')
 $router->route('module_action', '/<:module>/<:action>(.<:format>)') // :format optional
     ->defaults(array('format' => 'html'));
 
-$router->route('inbox', '/inbox/<:user>(.<:format>)') // :format optional
+$router->route('inbox', '/inbox/<:username>(.<:format>)') // :format optional
     ->defaults(array('module' => 'Mail', 'action' => 'index', 'format' => 'html'));
 
 $router->route('default', '/')
