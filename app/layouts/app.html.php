@@ -10,6 +10,7 @@ $asset = $this->helper('Asset');
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
 	<?php echo $asset->stylesheet('lessframework.css'); ?>
 	<meta name="viewport" content="width=device-width; initial-scale=1"/>
 	<!-- Add "maximum-scale=1" to fix the Mobile Safari auto-zoom bug on orientation changes, 
@@ -18,18 +19,19 @@ $asset = $this->helper('Asset');
 </head>
 
 <body>
-	<div id="pageHead">
+  <div id="pageWrapper">
+	<header>
     	<h1>Disposeamail.com</h1>
-    </div>
+    </header>
 
-    <div id="pageContent">
+    <article class="box">
     	<?php echo $content; ?>
-    </div>
+    </article>
     
 
-    <div id="pageFoot">
+    <footer>
     	Copyright &copy; 2011 Disposable Email - Disposeable Email - Throw-Away Email
-    </div>
+    </footer>
 	
 	<!-- GA Tracker -->
     <script type="text/javascript">
@@ -41,5 +43,6 @@ $asset = $this->helper('Asset');
 		pageTracker._initData();
 		pageTracker._trackPageview();
 	</script>
+ </div>
 </body>
 </html>

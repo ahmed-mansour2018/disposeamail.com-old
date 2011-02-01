@@ -83,6 +83,76 @@ img::selection 		{background: transparent;}
 img::-moz-selection {background: transparent;}
 
 
+
+
+
+/**
+ * ==============================================================
+ * Page styles
+ */
+body {
+	padding-top: 0;
+}
+
+#pageWrapper {
+	
+}
+
+article.box, div.box {
+	margin-bottom: 24px;
+	padding: 24px;
+	
+	background: #FFF;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+} 
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Merriweather', Georgia, serif;
+	-moz-text-shadow: yellow 0 5px 5px;
+	-webkit-text-shadow: #FFF 0 1px;
+	text-shadow: rgba(255,255,255,1) 1px 1px 0;
+}
+
+header h1 {
+	font-size: 42px;
+	line-height: 48px;
+}
+
+h2 {
+	font-size: 16px;
+	line-height: 24px;
+}
+
+section, aside, div {
+	margin-top: 24px;
+}
+
+ul {
+	list-style-type: square;
+	list-style-position: outside;
+	margin: 24px 0 0 16px;
+}
+
+p {
+	margin: 24px 0 0 0;
+}
+
+p:first-child {
+	margin: 0;
+}
+
+footer {
+	clear: both;
+}
+
+
+
+
+
+
 /*	13-column layout
 	60 px columns, 24 px gutters, 72 px margins, 1212 px total (extra space for scrollbars)
 	---------------------------------------------------------------------------------------
@@ -132,17 +202,4 @@ img::-moz-selection {background: transparent;}
 		-webkit-text-size-adjust: 100%;
 	}
 	
-}
-
-
-
-
-
-/**
- * ==============================================================
- * Page styles
- */
-#pageContent {
-	height: 600px;
-	background: rgb(60,97,158);
 }
