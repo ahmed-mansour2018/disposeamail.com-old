@@ -12,4 +12,4 @@ $router->route('inbox', '/inbox/<:user>(.<:format>)') // :format optional
     ->defaults(array('module' => 'Mail', 'action' => 'index', 'format' => 'html'));
 
 $router->route('default', '/')
-    ->defaults(array('module' => 'Home', 'action' => 'index', 'format' => 'html'));
+    ->defaults(array('module' => 'Page', 'action' => 'view', 'page' => 'home', 'format' => 'html'));
