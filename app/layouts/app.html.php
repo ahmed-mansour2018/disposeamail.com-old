@@ -1,11 +1,16 @@
 <?php
-$asset = $this->helper('Asset');
+$asset = $view->helper('Asset');
+if($title = $view->title()) {
+	$title .= " - Disposeamail.com";
+} else {
+	$title = "Disposable Email - Disposeable Email - Throw-Away Email - Disposeamail.com";
+}
 ?>
 <!doctype html>
 <html lang="en">
 <head>
 	<meta charset="utf-8"/>
-	<title>Disposable Email - Disposeable Email - Throw-Away Email - Disposeamail.com</title>
+	<title><?php echo $title; ?></title>
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

@@ -1,9 +1,10 @@
 <?php
+$view->title($view->h($msg->subject));
 $inboxUrl = $view->url(array('username' => $username), 'inbox');
 ?>
 
 <a href="<?php echo $inboxUrl; ?>">&lt;&lt; Back to Inbox</a>
-<h2><?php echo $msg->subject; ?></h2>
+<h2><?php echo $view->h($msg->subject); ?></h2>
 <p>
   From: &nbsp; <a href="mailto:<?php echo $msg->from; ?>"><?php echo $msg->from; ?></a><br />
   Dated: &nbsp;<?php echo $this->toDate($msg->date_message, 'M d y, H:i:s T'); ?>
