@@ -13,8 +13,14 @@ class Controller extends Alloy\Module\ControllerAbstract
      */
     public function viewAction(Alloy\Request $request)
     {
-    	$page = $request->page;
+    	$page = strtolower($request->page);
+    	$allowedPages = array('home', 'faq');
 
-        return "PAGE for " . $page;
+    	// Ensure page exists or return 404 if not
+    	if(!in_array($page, $allowedPages)) {
+    		return false;
+    	}
+
+    	return $this->template('page_' . $page);
     }
 }

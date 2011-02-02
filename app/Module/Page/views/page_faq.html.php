@@ -1,0 +1,5 @@
+<h2>What exactly is this for?</h2>
+<p>DisposeaMail.com is a disposeable email address system that allows you check any email address @disposeamail.com at anytime - without passwords or registrations. This service is useful for signup forms and programs that you are interested in, but don't want to provide your real email address to because you think they may send you spam. So, enter myname@disposeamail.com in the form, and then check your inbox at disposeamail.com - without even having to create the mailbox first. You can check the email for an account activation, etc. and then never use the email again - it's your spam-free disposeable email solution!</p>
+
+<h2>Do I have to sign-up?</h2>
+<p><b>No!</b> There are absolutely NO signups or registrations! Any email recieved by our servers will automatically be directed to the correct inbox. You do not have to setup an inbox before you can receive mail!</p>
