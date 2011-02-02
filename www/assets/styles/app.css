@@ -30,3 +30,7 @@ table tbody td {
 table tr.even {
     background: #f5f7f8;
 }
+
+#mail_inbox {
+	font-size: 14px;
+}
