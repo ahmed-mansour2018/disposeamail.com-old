@@ -18,13 +18,33 @@ class Controller extends Alloy\Module\ControllerAbstract
 
 
     /**
+     * Redirect to user inbox
+     * @method POST
+     */
+    public function userAction(Alloy\Request $request)
+    {
+        $kernel = $this->kernel;
+        return $kernel->redirect($kernel->url(array('username' => $request->username), 'inbox'));
+    }
+
+
+    /**
      * View user inbox
      * @method GET
      */
     public function inboxAction(Alloy\Request $request)
     {
+        $kernel = $this->kernel;
     	$username = $request->username;
 
-        return "INBOX for " . $username;
+        $mapper = $kernel->mapper();
+        $mail = $mapper->all('Module\Mail\Entity', array('username' => $username))
+            ->order(array('date_message' => 'DESC'))
+            ->execute();
+        
+        //$kernel->dump(\Spot\Log::queries());
+
+        return $this->template(__FUNCTION__)
+            ->set(compact('username', 'mail'));
     }
 }

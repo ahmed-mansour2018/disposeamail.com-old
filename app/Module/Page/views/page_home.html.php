@@ -4,7 +4,7 @@ $request = $this->kernel->request();
 ?>
 
 <section>
-	<form action="<?php echo $this->url(array('module' => 'mail', 'action' => 'inbox'), 'module_action'); ?>" method="post">
+	<form action="<?php echo $this->url(array('module' => 'mail', 'action' => 'user'), 'module_action'); ?>" method="post">
 	  <?php echo $form->text('username', $request->username, array('class' => 'email_username')); ?>
 	  <label for="username">@disposeamail.com</label>
 

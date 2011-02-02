@@ -12,6 +12,7 @@ $asset = $this->helper('Asset');
 	<![endif]-->
 	<link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css' />
 	<?php echo $asset->stylesheet('lessframework.css'); ?>
+	<?php echo $asset->stylesheet('app.css'); ?>
 	<meta name="viewport" content="width=device-width; initial-scale=1" />
 	<!-- Add "maximum-scale=1" to fix the Mobile Safari auto-zoom bug on orientation changes, 
 		but keep in mind that it will disable user-zooming completely. Bad for accessibility. -->
