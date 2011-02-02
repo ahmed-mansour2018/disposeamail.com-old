@@ -11,5 +11,8 @@ $router->route('page_faq', '/faq')
 $router->route('inbox', '/inbox/<:username>(.<:format>)') // :format optional
     ->defaults(array('module' => 'Mail', 'action' => 'inbox', 'format' => 'html'));
 
+$router->route('inbox_action', '/inbox/<:username>/<:action>(/<:item>)(.<:format>)') // :format optional
+    ->defaults(array('module' => 'Mail', 'format' => 'html'));
+
 $router->route('module_action', '/<:module>/<:action>(.<:format>)') // :format optional
     ->defaults(array('format' => 'html'));

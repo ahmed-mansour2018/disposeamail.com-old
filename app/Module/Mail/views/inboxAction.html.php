@@ -1,12 +1,20 @@
-<h2>INBOX for <?php echo $username; ?></h2>
+<h2>INBOX: <?php echo $username; ?>@disposeamail.com</h2>
 
 <?php
 // Using 'datagrid' Generic
 $kernel = $this->kernel;
 $grid = $this->generic('datagrid')
 	->data($mail)
-	->column('Subject', function($view, $item) use($kernel) {
-		$msgUrl = $view->url(array('module' => 'Mail', 'action' => 'view', 'id' => $item->id), 'module_action');
+	->column('Subject', function($view, $item) use($kernel, $username) {
+		// Build URL from route
+		$msgUrl = $view->url(array(
+			'module' => 'Mail',
+			'action' => 'view',
+			'username' => $username,
+			'item' => $item->id),
+		'inbox_action');
+		
+		// Reutrn HTML string
 		return "<a href='" . $msgUrl . "' title='" . $item->subject . "'>" . $kernel->truncate($item->subject, 40) . "</a>";
 	})
 	->column('From', function($view, $item) use($kernel) {

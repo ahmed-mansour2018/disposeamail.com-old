@@ -47,4 +47,31 @@ class Controller extends Alloy\Module\ControllerAbstract
         return $this->template(__FUNCTION__)
             ->set(compact('username', 'mail'));
     }
+
+
+    /**
+     * View single message
+     * @method GET
+     */
+    public function viewAction(Alloy\Request $request)
+    {
+        $kernel = $this->kernel;
+        $username = $request->username;
+        $itemId = $request->get('item', 0);
+
+        $mapper = $kernel->mapper();
+        $msg = $mapper->first('Module\Mail\Entity', array('id' => $itemId, 'username' => $username));
+
+        // 404 for messages that do not exist
+        if(!$msg) {
+            return false;
+        }
+
+        // Update 'is_read' marker
+        $msg->is_read = true;
+        $mapper->save($msg);
+
+        return $this->template(__FUNCTION__)
+            ->set(compact('username', 'msg'));
+    }
 }
