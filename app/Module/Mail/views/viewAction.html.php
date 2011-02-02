@@ -4,10 +4,10 @@ $inboxUrl = $view->url(array('username' => $username), 'inbox');
 ?>
 
 <a href="<?php echo $inboxUrl; ?>">&lt;&lt; Back to Inbox</a>
-<h2><?php echo $view->h($msg->subject); ?></h2>
+<h2><?php echo $msg->getSubject(); ?></h2>
 <p>
   From: &nbsp; <a href="mailto:<?php echo $msg->from; ?>"><?php echo $msg->from; ?></a><br />
-  Dated: &nbsp;<?php echo $this->toDate($msg->date_message, 'M d y, H:i:s T'); ?>
+  Dated: &nbsp;<?php echo $this->toDate($msg->date_created, 'M d y, H:i:s T'); ?>
 </p>
 
 <div id="mail_message">
@@ -23,13 +23,13 @@ $inboxUrl = $view->url(array('username' => $username), 'inbox');
 	google_color_link = "FFFFFF";
 	google_color_url = "000000";
 	google_color_text = "000000";
-	//--></script> 
+	//--></script>
 	<script type="text/javascript"
 	  src="http://pagead2.googlesyndication.com/pagead/show_ads.js"> 
 	</script><br />
 
 
-  <?php echo $msg->message; ?>
+  <?php echo $msg->getMessage(); ?>
 
 
 	<script type="text/javascript"><!--

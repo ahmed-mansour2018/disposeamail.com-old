@@ -39,7 +39,7 @@ class Controller extends Alloy\Module\ControllerAbstract
 
         $mapper = $kernel->mapper();
         $mail = $mapper->all('Module\Mail\Entity', array('username' => $username))
-            ->order(array('date_message' => 'DESC'))
+            ->order(array('date_created' => 'DESC'))
             ->execute();
         
         //$kernel->dump(\Spot\Log::queries());

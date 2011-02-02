@@ -346,7 +346,7 @@ class Template
     public function toDate($input = null, $format = 'M d, Y')
     {
         $format = $this->kernel->config('i18n.date_format', $format);
-        return $input ? date($format, (is_int($input) ? $input : strtotime($input))) : date($format);
+        return $input ? date($format, (is_numeric($input) ? $input : strtotime($input))) : date($format);
     }
     
     
@@ -359,8 +359,8 @@ class Template
      */
     public function toDateTime($input = null, $format = null)
     {
-        $format = ($format) ? $format : ($this->kernel->config('i18n.date_format') . ' ' . $this->kernel->config('i18n.time_format'));
-        return $input ? date($format, (is_int($input) ? $input : strtotime($input))) : date($format);
+        $format = (null !== $format) ? $format : ($this->kernel->config('i18n.date_format') . ' ' . $this->kernel->config('i18n.time_format'));
+        return $input ? date($format, (is_numeric($input) ? $input : strtotime($input))) : date($format);
     }
     
     

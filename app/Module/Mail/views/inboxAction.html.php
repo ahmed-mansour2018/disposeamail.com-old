@@ -42,7 +42,7 @@ $grid = $view->generic('datagrid')
 		return "<span title='" . $item->from . "'>" . $kernel->truncate($item->from) . "</span>";
 	})
 	->column('Date', function($item) use($view) {
-		return "<nobr>" . $view->toDate($item->date_message) . "</nobr>";
+		return "<nobr>" . $view->toDate($item->date_created) . "</nobr>";
 	})
 	// Called if dataset is empty
 	->noData(function() use($username) {
