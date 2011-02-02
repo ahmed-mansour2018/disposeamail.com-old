@@ -172,7 +172,7 @@ header h1 a {
  */
 label {	
 	font-size: 20px;
-	color: #666; 
+	color: #555; 
 }
 
 input, textarea {
@@ -180,7 +180,7 @@ input, textarea {
 	margin: 4px 0 20px 0; 
 	background: #fff; 
 	width: 220px; 
-	font-size: 14px; 
+	font-size: 20px; 
 	color: #555; 
 	border: 1px #ddd solid;
 	
@@ -209,6 +209,7 @@ input.submit {
 	margin-top: 10px;
 	background-color: #18a5cc;
 	border: none;
+	font-size: 16px;
 	
 	/* -- CSS3 Transition - define which property to animate (i.e. the shadow)  -- */
 	-webkit-transition: -webkit-box-shadow 0.3s linear;
@@ -230,7 +231,9 @@ input.submit:hover {
 	cursor:  pointer;
 } 
 
-
+input.email_username {
+	text-align: right;
+}
 
 
 /*	13-column layout
