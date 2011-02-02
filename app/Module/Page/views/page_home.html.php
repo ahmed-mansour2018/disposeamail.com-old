@@ -1,11 +1,30 @@
 <?php
 $form = $this->helper('form');
+$request = $this->kernel->request();
 ?>
 
 <section>
 	<form action="<?php echo $this->url(array('module' => 'mail', 'action' => 'inbox'), 'module_action'); ?>" method="post">
-	  <?php echo $form->text('username'); ?>
-	  <button type="submit">Check Mail</button>
+	  <?php echo $form->text('username', $request->username, array('class' => 'email_username')); ?>
+	  <label for="username">@disposeamail.com</label>
+
+	  <script type="text/javascript"><!--
+		google_ad_client = "pub-3241315962888840";
+		google_ad_width = 468;
+		google_ad_height = 60;
+		google_ad_format = "468x60_as";
+		google_ad_type = "text_image";
+		google_ad_channel ="";
+		google_color_border = "003366";
+		google_color_bg = "FFFFFF";
+		google_color_link = "FFFFFF";
+		google_color_url = "000000";
+		google_color_text = "000000";
+		//-->
+	  </script>
+	  <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+
+	  <input type="submit" class="submit" value="Check Mail" />
 	</form>
 </section>
 

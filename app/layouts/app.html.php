@@ -28,9 +28,15 @@ $asset = $this->helper('Asset');
     	<?php echo $content; ?>
     </article>
     
+    <article class="box">
+    	<p>
+    	  <a href="<?php echo $this->url(array(), 'default'); ?>">Home</a> | 
+    	  <a href="<?php echo $this->url(array(), 'page_faq'); ?>">F.A.Q.</a>
+    	</p>
+    </article>
 
     <footer>
-    	Copyright &copy; 2011 Disposable Email - Disposeable Email - Throw-Away Email
+    	<p>Copyright &copy; 2011 Disposable Email - Disposeable Email - Throw-Away Email</p>
     </footer>
 	
 	<!-- GA Tracker -->
