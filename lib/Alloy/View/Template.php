@@ -15,6 +15,7 @@ class Template
     protected $_fileFormat;
     protected $_vars = array();
     protected $_path;
+    protected $_title;
     
     // Extension type
     protected $_default_format = 'html';
@@ -267,6 +268,20 @@ class Template
         }
         return $this; // Fluent interface
     }
+
+
+    /**
+     * Get/Set title, usually to pass along to layout
+     */
+    public function title($title = null)
+    {
+        if(null === $title) {
+            return $this->_title;
+        } else {
+            $this->_title = $title;
+            return $this; // Fluent interface
+        }
+    }
     
     
     /**
@@ -398,9 +413,13 @@ class Template
             ob_start();
             // Extract set variables into local template scope
             extract($this->vars());
+
+            // Localize object instance for easier use in closures 
+            $view = &$this;
+            $kernel = $this->kernel;
+
             include($vfile);
-            $templateContent = ob_get_contents();
-            ob_end_clean();
+            $templateContent = ob_get_clean();
         } else {
             // Just get raw file contents
             $templateContent = file_get_contents($vfile);
