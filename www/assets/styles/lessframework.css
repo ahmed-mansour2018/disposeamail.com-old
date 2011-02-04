@@ -150,6 +150,11 @@ p:first-child {
 
 footer {
 	clear: both;
+	margin-bottom: 30px;
+}
+
+footer p {
+	margin: 8px 0 0 0;
 }
 
 a {

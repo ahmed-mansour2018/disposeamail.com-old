@@ -42,7 +42,13 @@ if($title = $view->title()) {
     </article>
 
     <footer>
+      <p style="float: right; margin:20px; padding:0;">
+    	  <a href="http://alloyframework.org" title="Powered by Alloy PHP Framework"><?php echo $asset->image('alloy_logo_mini.png'); ?></a>
+    </p>
+      <article class="box small">
     	<p>Copyright &copy; 2011 Disposable Email - Disposeable Email - Throw-Away Email</p>
+    	<p>Service developed and provided by <a href="http://actridge.com">Actridge</a> - Powered by <a href="http://alloyframework.org">Alloy PHP Framework</a></p>
+      </article>
     </footer>
 	
 	<!-- GA Tracker -->

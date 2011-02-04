@@ -164,7 +164,7 @@ class Template
      */
     public function generic($name, $template = null)
     {
-        $helperClass = 'Alloy\View\Generic\\' . $name;
+        $helperClass = 'Alloy\View\Generic\\' . ucfirst($name);
         $template = (null === $template) ? strtolower($name) : $template;
         return new $helperClass($template);
     }
@@ -177,7 +177,7 @@ class Template
      */
     public function helper($name)
     {
-        $helperClass = 'Alloy\View\Helper\\' . $name;
+        $helperClass = 'Alloy\View\Helper\\' . ucfirst($name);
         
         if(!isset(self::$_helpers[$helperClass])) {
             self::$_helpers[$helperClass] = new $helperClass(\Kernel(), $this);
