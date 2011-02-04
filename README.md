@@ -1,5 +1,7 @@
-Alloy PHP Framework
-http://alloyframework.org
+Disposeamail.com
 -------------------
+http://disposeamail.com  
 
-A lightweight REST-centered PHP5 framework
+Free Temporary and Disposable Email Accounts
+
+Simply enter your email address as <anything>@disposeamail.com. Then login into your inbox and read your email. No signing up beforehand necessary.
