@@ -6,7 +6,7 @@ $request = $this->kernel->request();
 <section>
 	<form action="<?php echo $this->url(array('module' => 'mail', 'action' => 'user'), 'module_action'); ?>" method="post">
 	  <?php echo $form->text('username', $request->username, array('class' => 'email_username')); ?>
-	  <label for="username">@disposeamail.com</label>
+	  <label for="username">@disposeamail.com</label><br />
 
 	  <script type="text/javascript"><!--
 		google_ad_client = "pub-3241315962888840";
@@ -22,7 +22,7 @@ $request = $this->kernel->request();
 		google_color_text = "000000";
 		//-->
 	  </script>
-	  <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+	  <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script><br />
 
 	  <input type="submit" class="submit" value="Check Mail" />
 	</form>

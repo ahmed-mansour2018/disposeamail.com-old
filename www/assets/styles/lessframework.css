@@ -90,9 +90,6 @@ img::-moz-selection {background: transparent;}
  * ==============================================================
  * Page styles
  */
-body {
-	padding-top: 0;
-}
 
 #pageWrapper {
 	
@@ -290,4 +287,8 @@ input.email_username {
 		-webkit-text-size-adjust: 100%;
 	}
 	
+}
+
+body {
+	padding-top: 0;
 }
