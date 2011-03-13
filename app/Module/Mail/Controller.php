@@ -67,11 +67,29 @@ class Controller extends Alloy\Module\ControllerAbstract
             return false;
         }
 
-        // Update 'is_read' marker
-        $msg->is_read = true;
-        $mapper->save($msg);
+        // Update 'is_read' marker if not already read
+        if(!$msg->is_read) {
+            $msg->is_read = true;
+            $mapper->save($msg);
+        }
 
         return $this->template(__FUNCTION__)
             ->set(compact('username', 'msg'));
+    }
+
+
+    /**
+     * Purge messages (delete messages over 30 days old)
+     * @method GET
+     */
+    public function purgeAction(Alloy\Request $request)
+    {
+        $kernel = $this->kernel;
+        $username = $request->username;
+
+        $mapper = $kernel->mapper();
+        $msg = $mapper->delete('Module\Mail\Entity', array('date_created <=' => strtotime('-30 days')));
+
+        return "Deleted messages older than 30 days";
     }
 }
